@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5e341521042457eaa8e6fda1630fd84" Name="Diagrama1">
+        <EntityTypeShape EntityType="agrosysModel.cliente" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.control_acceso" Width="1.5" PointX="5.2103871950928067" PointY="27.693554488799329" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_factura" Width="1.5" PointX="4.9981343899844841" PointY="5.8151458975929513" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_order_de_compra" Width="1.5" PointX="3.25" PointY="30.625" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_pedido_cliente" Width="1.5" PointX="11.165847837536525" PointY="27.717359108718746" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_pedido_tienda" Width="1.5" PointX="7.9502399787075069" PointY="30.839884027298485" />
+        <EntityTypeShape EntityType="agrosysModel.empleado" Width="1.5" PointX="8.5" PointY="19.75" />
+        <EntityTypeShape EntityType="agrosysModel.envio_cliente" Width="1.5" PointX="6.4568586807962784" PointY="18.411482521524412" />
+        <EntityTypeShape EntityType="agrosysModel.envio_tienda" Width="1.5" PointX="4.5984410795375892" PointY="7.1683542016746262" />
+        <EntityTypeShape EntityType="agrosysModel.factura" Width="1.5" PointX="6.4960399207174966" PointY="10.331463729185733" />
+        <EntityTypeShape EntityType="agrosysModel.inventario" Width="1.5" PointX="9.6011147003626061" PointY="23.97429719193573" />
+        <EntityTypeShape EntityType="agrosysModel.order_de_compra" Width="1.5" PointX="2.252960327199176" PointY="23.876778017672141" />
+        <EntityTypeShape EntityType="agrosysModel.pedido_cliente" Width="1.5" PointX="0.5" PointY="28" />
+        <EntityTypeShape EntityType="agrosysModel.pedido_tienda" Width="1.5" PointX="7.8061961400351461" PointY="12.897562941954268" />
+        <EntityTypeShape EntityType="agrosysModel.producto" Width="1.5" PointX="9.7166361351109281" PointY="9.2943643076784745" />
+        <EntityTypeShape EntityType="agrosysModel.proveedor" Width="1.5" PointX="6.2404450374843767" PointY="24.530340891578394" />
+        <EntityTypeShape EntityType="agrosysModel.rol" Width="1.5" PointX="6.9985247845754612" PointY="22.740846257070473" />
+        <EntityTypeShape EntityType="agrosysModel.tienda" Width="1.5" PointX="2.4473699156415507" PointY="11.429677149015328" />
+        <EntityTypeShape EntityType="agrosysModel.usuario" Width="1.5" PointX="7.1805428467600345" PointY="2.0440143505316293" />
+        <AssociationConnector Association="agrosysModel.fk_envio_cliente_cliente1" />
+        <AssociationConnector Association="agrosysModel.fk_factura_cliente" />
+        <AssociationConnector Association="agrosysModel.fk_pedido_cliente_cliente1" />
+        <AssociationConnector Association="agrosysModel.fk_detalle_order_de_compra_order_de_compra1" />
+        <AssociationConnector Association="agrosysModel.fk_detalle_order_de_compra_proveedor1" />
+        <AssociationConnector Association="agrosysModel.fk_empleado_tienda1" />
+        <AssociationConnector Association="agrosysModel.fk_factura_pedido_cliente1" />
+        <AssociationConnector Association="agrosysModel.fk_inventario_proveedor1" />
+        <AssociationConnector Association="agrosysModel.fk_pedido_tienda_tienda1" />
+        <AssociationConnector Association="agrosysModel.fk_producto_proveedor1" />
+        <AssociationConnector Association="agrosysModel.fk_usuario_rol1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

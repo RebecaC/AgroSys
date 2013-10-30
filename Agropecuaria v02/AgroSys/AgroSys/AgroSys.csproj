@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F06B4922-22FE-4E1F-B772-6C84EC5F0F90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgroSys</RootNamespace>
+    <AssemblyName>AgroSys</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AgroSys.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySQL.Data.Entities.6.7.4.1\lib\net45\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.ChartView, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadChart, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikData, Version=2013.2.724.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="agrosysDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agrosysDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agrosysDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AgrosysDBContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgrosysDBContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgrosysDBContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgrosysDBContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgrosysDBContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="control_acceso.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesHome.Designer.cs">
+      <DependentUpon>ClientesHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_factura.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_order_de_compra.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_pedido_cliente.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_pedido_tienda.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="empleado.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="envio_cliente.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="envio_tienda.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="factura.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inventario.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDIHomecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIHomecs.Designer.cs">
+      <DependentUpon>MDIHomecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="order_de_compra.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pedido_cliente.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pedido_tienda.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="producto.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proveedor.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="prueba.cs" />
+    <Compile Include="rol.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tienda.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tienda.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tienda.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiendaHome.Designer.cs">
+      <DependentUpon>TiendaHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturasHome.Designer.cs">
+      <DependentUpon>FacturasHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloRolUsuario\ListarRolUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloRolUsuario\ListarRolUsuario.Designer.cs">
+      <DependentUpon>ListarRolUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloPedidos\IngresoPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloPedidos\IngresoPedidos.Designer.cs">
+      <DependentUpon>IngresoPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloPedidos\ListarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloPedidos\ListarPedidos.Designer.cs">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloFacturas\IngresoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloFacturas\IngresoFacturas.Designer.cs">
+      <DependentUpon>IngresoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloFacturas\ListarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloFacturas\ListarFacturas.Designer.cs">
+      <DependentUpon>ListarFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloControlAcceso\ListarControlAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloControlAcceso\ListarControlAcceso.Designer.cs">
+      <DependentUpon>ListarControlAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloUsuario\ActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloUsuario\ActualizarUsuario.Designer.cs">
+      <DependentUpon>ActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloUsuario\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloUsuario\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloUsuario\IngresoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloUsuario\IngresoUsuario.Designer.cs">
+      <DependentUpon>IngresoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloUsuario\ListarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloUsuario\ListarUsuario.Designer.cs">
+      <DependentUpon>ListarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadosHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadosHome.Designer.cs">
+      <DependentUpon>EmpleadosHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloClientes\ActualizarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloClientes\ActualizarClientes.Designer.cs">
+      <DependentUpon>ActualizarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloClientes\EliminarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloClientes\EliminarClientes.Designer.cs">
+      <DependentUpon>EliminarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloClientes\IngresoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloClientes\IngresoClientes.Designer.cs">
+      <DependentUpon>IngresoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloClientes\ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloClientes\ListarClientes.Designer.cs">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloEmpleados\ActualizarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloEmpleados\ActualizarEmpleados.Designer.cs">
+      <DependentUpon>ActualizarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloEmpleados\EliminarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloEmpleados\EliminarEmpleados.Designer.cs">
+      <DependentUpon>EliminarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloEmpleados\IngresoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloEmpleados\IngresoEmpleados.Designer.cs">
+      <DependentUpon>IngresoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloEmpleados\ListarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloEmpleados\ListarEmpleados.Designer.cs">
+      <DependentUpon>ListarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloInventario\ActualizarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloInventario\ActualizarInventario.Designer.cs">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloInventario\IngresoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloInventario\IngresoInventario.Designer.cs">
+      <DependentUpon>IngresoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloInventario\ListarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloInventario\ListarInventario.Designer.cs">
+      <DependentUpon>ListarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProductos\ActualizarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProductos\ActualizarProductos.Designer.cs">
+      <DependentUpon>ActualizarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProductos\EliminarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProductos\EliminarProductos.Designer.cs">
+      <DependentUpon>EliminarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProductos\IngresoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProductos\IngresoProducto.Designer.cs">
+      <DependentUpon>IngresoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProductos\ListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProductos\ListarProductos.Designer.cs">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloTienda\ActualizarTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloTienda\ActualizarTienda.Designer.cs">
+      <DependentUpon>ActualizarTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloTienda\EliminarTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloTienda\EliminarTienda.Designer.cs">
+      <DependentUpon>EliminarTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloTienda\IngresoTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloTienda\IngresoTienda.Designer.cs">
+      <DependentUpon>IngresoTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloTienda\ListarTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloTienda\ListarTienda.Designer.cs">
+      <DependentUpon>ListarTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosHome.Designer.cs">
+      <DependentUpon>ProductosHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProveedor\ActualizarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProveedor\ActualizarProveedor.Designer.cs">
+      <DependentUpon>ActualizarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProveedor\EliminarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProveedor\EliminarProveedores.Designer.cs">
+      <DependentUpon>EliminarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProveedor\IngresoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProveedor\IngresoProveedor.Designer.cs">
+      <DependentUpon>IngresoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloProveedor\ListarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloProveedor\ListarProveedor.Designer.cs">
+      <DependentUpon>ListarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedoresHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedoresHome.Designer.cs">
+      <DependentUpon>ProveedoresHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>AgrosysDBContext.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClientesHome.resx">
+      <DependentUpon>ClientesHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIHomecs.resx">
+      <DependentUpon>MDIHomecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiendaHome.resx">
+      <DependentUpon>TiendaHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturasHome.resx">
+      <DependentUpon>FacturasHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloRolUsuario\ListarRolUsuario.resx">
+      <DependentUpon>ListarRolUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloPedidos\IngresoPedidos.resx">
+      <DependentUpon>IngresoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloPedidos\ListarPedidos.resx">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloFacturas\IngresoFacturas.resx">
+      <DependentUpon>IngresoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloFacturas\ListarFacturas.resx">
+      <DependentUpon>ListarFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloControlAcceso\ListarControlAcceso.resx">
+      <DependentUpon>ListarControlAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloUsuario\ActualizarUsuario.resx">
+      <DependentUpon>ActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloUsuario\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloUsuario\IngresoUsuario.resx">
+      <DependentUpon>IngresoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloUsuario\ListarUsuario.resx">
+      <DependentUpon>ListarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadosHome.resx">
+      <DependentUpon>EmpleadosHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloClientes\ActualizarClientes.resx">
+      <DependentUpon>ActualizarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloClientes\EliminarClientes.resx">
+      <DependentUpon>EliminarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloClientes\IngresoClientes.resx">
+      <DependentUpon>IngresoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloClientes\ListarClientes.resx">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloEmpleados\ActualizarEmpleados.resx">
+      <DependentUpon>ActualizarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloEmpleados\EliminarEmpleados.resx">
+      <DependentUpon>EliminarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloEmpleados\IngresoEmpleados.resx">
+      <DependentUpon>IngresoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloEmpleados\ListarEmpleados.resx">
+      <DependentUpon>ListarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloInventario\ActualizarInventario.resx">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloInventario\IngresoInventario.resx">
+      <DependentUpon>IngresoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloInventario\ListarInventario.resx">
+      <DependentUpon>ListarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProductos\ActualizarProductos.resx">
+      <DependentUpon>ActualizarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProductos\EliminarProductos.resx">
+      <DependentUpon>EliminarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProductos\IngresoProducto.resx">
+      <DependentUpon>IngresoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProductos\ListarProductos.resx">
+      <DependentUpon>ListarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloTienda\ActualizarTienda.resx">
+      <DependentUpon>ActualizarTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloTienda\EliminarTienda.resx">
+      <DependentUpon>EliminarTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloTienda\IngresoTienda.resx">
+      <DependentUpon>IngresoTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloTienda\ListarTienda.resx">
+      <DependentUpon>ListarTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosHome.resx">
+      <DependentUpon>ProductosHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProveedor\ActualizarProveedor.resx">
+      <DependentUpon>ActualizarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProveedor\EliminarProveedores.resx">
+      <DependentUpon>EliminarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProveedor\IngresoProveedor.resx">
+      <DependentUpon>IngresoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloProveedor\ListarProveedor.resx">
+      <DependentUpon>ListarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ProveedoresHome.resx">
+      <DependentUpon>ProveedoresHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="agrosysDataSet.xsc">
+      <DependentUpon>agrosysDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet.xss">
+      <DependentUpon>agrosysDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet1.xsc">
+      <DependentUpon>agrosysDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet1.xss">
+      <DependentUpon>agrosysDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet2.xsc">
+      <DependentUpon>agrosysDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet2.xss">
+      <DependentUpon>agrosysDataSet2.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="AgrosysDBContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AgrosysDBContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="agrosysDataSet3.xsc">
+      <DependentUpon>agrosysDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet3.xss">
+      <DependentUpon>agrosysDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet4.xsc">
+      <DependentUpon>agrosysDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet4.xss">
+      <DependentUpon>agrosysDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet5.xsc">
+      <DependentUpon>agrosysDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet5.xss">
+      <DependentUpon>agrosysDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet6.xsc">
+      <DependentUpon>agrosysDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet6.xss">
+      <DependentUpon>agrosysDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet7.xsc">
+      <DependentUpon>agrosysDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="agrosysDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agrosysDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agrosysDataSet7.xss">
+      <DependentUpon>agrosysDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="AgrosysDBContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgrosysDBContext.edmx</DependentUpon>
+      <LastGenOutput>AgrosysDBContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AgrosysDBContext.edmx.diagram">
+      <DependentUpon>AgrosysDBContext.edmx</DependentUpon>
+    </None>
+    <None Include="AgrosysDBContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgrosysDBContext.edmx</DependentUpon>
+      <LastGenOutput>AgrosysDBContext.cs</LastGenOutput>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Proveedores.xsc">
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Proveedores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proveedores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proveedores.xss">
+      <DependentUpon>Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Tienda.xsc">
+      <DependentUpon>Tienda.xsd</DependentUpon>
+    </None>
+    <None Include="Tienda.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tienda.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tienda.xss">
+      <DependentUpon>Tienda.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\products.png" />
+    <None Include="image\empleados.png" />
+    <None Include="image\Fish.png" />
+    <None Include="image\deleteFomr.png" />
+    <None Include="image\searchForm.png" />
+    <None Include="image\Logo sistema AgroSysDesktopModulos.jpg" />
+    <None Include="image\saveForm.png" />
+    <None Include="image\update.png" />
+    <None Include="image\Logo sistema AgroSysDesktop.jpg" />
+    <None Include="image\exit.png" />
+    <None Include="image\delete.png" />
+    <None Include="image\list.png" />
+    <None Include="image\add.png" />
+    <None Include="image\ventas.png" />
+    <None Include="image\usuarios.png" />
+    <None Include="image\envios.png" />
+    <None Include="image\clientes.png" />
+    <None Include="image\administracion.png" />
+    <None Include="image\agroguate-desktop.jpg" />
+    <None Include="image\addFacturas.png" />
+    <Content Include="image\agroguate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

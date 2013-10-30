@@ -1,0 +1,1121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="agrosysModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="agrosysModelStoreContainer">
+          <EntitySet Name="cliente" EntityType="agrosysModel.Store.cliente" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="control_acceso" EntityType="agrosysModel.Store.control_acceso" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="detalle_factura" EntityType="agrosysModel.Store.detalle_factura" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="detalle_order_de_compra" EntityType="agrosysModel.Store.detalle_order_de_compra" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="detalle_pedido_cliente" EntityType="agrosysModel.Store.detalle_pedido_cliente" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="detalle_pedido_tienda" EntityType="agrosysModel.Store.detalle_pedido_tienda" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="empleado" EntityType="agrosysModel.Store.empleado" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="envio_cliente" EntityType="agrosysModel.Store.envio_cliente" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="envio_tienda" EntityType="agrosysModel.Store.envio_tienda" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="factura" EntityType="agrosysModel.Store.factura" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="inventario" EntityType="agrosysModel.Store.inventario" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="order_de_compra" EntityType="agrosysModel.Store.order_de_compra" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="pedido_cliente" EntityType="agrosysModel.Store.pedido_cliente" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="pedido_tienda" EntityType="agrosysModel.Store.pedido_tienda" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="producto" EntityType="agrosysModel.Store.producto" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="proveedor" EntityType="agrosysModel.Store.proveedor" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="rol" EntityType="agrosysModel.Store.rol" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="tienda" EntityType="agrosysModel.Store.tienda" store:Type="Tables" Schema="agrosys" />
+          <EntitySet Name="usuario" EntityType="agrosysModel.Store.usuario" store:Type="Tables" Schema="agrosys" />
+          <AssociationSet Name="fk_detalle_order_de_compra_order_de_compra1" Association="agrosysModel.Store.fk_detalle_order_de_compra_order_de_compra1">
+            <End Role="order_de_compra" EntitySet="order_de_compra" />
+            <End Role="detalle_order_de_compra" EntitySet="detalle_order_de_compra" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_order_de_compra_proveedor1" Association="agrosysModel.Store.fk_detalle_order_de_compra_proveedor1">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="detalle_order_de_compra" EntitySet="detalle_order_de_compra" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_tienda1" Association="agrosysModel.Store.fk_empleado_tienda1">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="empleado" EntitySet="empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_envio_cliente_cliente1" Association="agrosysModel.Store.fk_envio_cliente_cliente1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="envio_cliente" EntitySet="envio_cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factura_cliente" Association="agrosysModel.Store.fk_factura_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="factura" EntitySet="factura" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factura_pedido_cliente1" Association="agrosysModel.Store.fk_factura_pedido_cliente1">
+            <End Role="pedido_cliente" EntitySet="pedido_cliente" />
+            <End Role="factura" EntitySet="factura" />
+          </AssociationSet>
+          <AssociationSet Name="fk_inventario_proveedor1" Association="agrosysModel.Store.fk_inventario_proveedor1">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="inventario" EntitySet="inventario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pedido_cliente_cliente1" Association="agrosysModel.Store.fk_pedido_cliente_cliente1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pedido_cliente" EntitySet="pedido_cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pedido_tienda_tienda1" Association="agrosysModel.Store.fk_pedido_tienda_tienda1">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="pedido_tienda" EntitySet="pedido_tienda" />
+          </AssociationSet>
+          <AssociationSet Name="fk_producto_proveedor1" Association="agrosysModel.Store.fk_producto_proveedor1">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_rol1" Association="agrosysModel.Store.fk_usuario_rol1">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="primer_nombre" Type="varchar" MaxLength="45" />
+          <Property Name="segundo_nombre" Type="varchar" MaxLength="45" />
+          <Property Name="primer_apellido" Type="varchar" MaxLength="45" />
+          <Property Name="segundo_apellido" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+          <Property Name="nit" Type="varchar" MaxLength="45" />
+          <Property Name="dpi" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="control_acceso">
+          <Key>
+            <PropertyRef Name="id_control_acceso" />
+            <PropertyRef Name="usuario_id_usuario" />
+          </Key>
+          <Property Name="id_control_acceso" Type="int" Nullable="false" />
+          <Property Name="hora" Type="varchar" MaxLength="45" />
+          <Property Name="fecha" Type="varchar" MaxLength="45" />
+          <Property Name="usuario_id_usuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_factura">
+          <Key>
+            <PropertyRef Name="id_detalle_factura" />
+            <PropertyRef Name="factura_id_factura" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Name="id_detalle_factura" Type="int" Nullable="false" />
+          <Property Name="sub_total" Type="varchar" MaxLength="45" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="factura_id_factura" Type="int" Nullable="false" />
+          <Property Name="producto_id_producto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_order_de_compra">
+          <Key>
+            <PropertyRef Name="id_detalle_order_de_compra" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+            <PropertyRef Name="order_de_compra_id_order_de_compra" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Name="id_detalle_order_de_compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="proveedor_id_proveedor" Type="int" Nullable="false" />
+          <Property Name="order_de_compra_id_order_de_compra" Type="int" Nullable="false" />
+          <Property Name="producto_id_producto" Type="int" Nullable="false" />
+          <Property Name="precio" Type="varchar" MaxLength="45" />
+          <Property Name="subtotal" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="detalle_pedido_cliente">
+          <Key>
+            <PropertyRef Name="id_detalle_pedido_cliente" />
+            <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Name="id_detalle_pedido_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="pedido_cliente_id_pedido_cliente" Type="int" Nullable="false" />
+          <Property Name="producto_id_producto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_pedido_tienda">
+          <Key>
+            <PropertyRef Name="id_detalle_pedido_tienda" />
+            <PropertyRef Name="pedido_tienda_id_pedido_tienda" />
+          </Key>
+          <Property Name="id_detalle_pedido_tienda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="pedido_tienda_id_pedido_tienda" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_usuario_empleado1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="id_empleado" />
+            <PropertyRef Name="tienda_id_tienda" />
+          </Key>
+          <Property Name="id_empleado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="primer_nombre" Type="varchar" MaxLength="45" />
+          <Property Name="segundo_nombre" Type="varchar" MaxLength="45" />
+          <Property Name="primer_apellido" Type="varchar" MaxLength="45" />
+          <Property Name="segundo_apellido" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+          <Property Name="tienda_id_tienda" Type="int" Nullable="false" />
+          <Property Name="dpi" Type="varchar" MaxLength="75" />
+          <Property Name="nit" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="envio_cliente">
+          <Key>
+            <PropertyRef Name="id_envio_cliente" />
+            <PropertyRef Name="cliente_id_cliente" />
+          </Key>
+          <Property Name="id_envio_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" />
+          <Property Name="cliente_id_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="envio_tienda">
+          <Key>
+            <PropertyRef Name="id_envio_tienda" />
+            <PropertyRef Name="pedido_tienda_id_pedido_tienda" />
+          </Key>
+          <Property Name="id_envio_tienda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" />
+          <Property Name="pedido_tienda_id_pedido_tienda" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_detalle_factura_factura1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="id_factura" />
+            <PropertyRef Name="cliente_id_cliente" />
+            <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+            <PropertyRef Name="pedido_cliente_cliente_id_cliente" />
+          </Key>
+          <Property Name="id_factura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sub_total" Type="varchar" MaxLength="45" />
+          <Property Name="total" Type="varchar" MaxLength="45" />
+          <Property Name="iva" Type="varchar" MaxLength="45" />
+          <Property Name="cliente_id_cliente" Type="int" Nullable="false" />
+          <Property Name="pedido_cliente_id_pedido_cliente" Type="int" Nullable="false" />
+          <Property Name="pedido_cliente_cliente_id_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inventario">
+          <Key>
+            <PropertyRef Name="id_inventario" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Name="id_inventario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="total_productos" Type="int" />
+          <Property Name="proveedor_id_proveedor" Type="int" Nullable="false" />
+          <Property Name="producto_id_producto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="order_de_compra">
+          <Key>
+            <PropertyRef Name="id_order_de_compra" />
+          </Key>
+          <Property Name="id_order_de_compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" />
+          <Property Name="iva" Type="varchar" MaxLength="45" />
+          <Property Name="total" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_detalle_pedido_cliente_pedido_cliente1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="pedido_cliente">
+          <Key>
+            <PropertyRef Name="id_pedido_cliente" />
+            <PropertyRef Name="cliente_id_cliente" />
+          </Key>
+          <Property Name="id_pedido_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" />
+          <Property Name="cliente_id_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_detalle_pedido_tienda_pedido_tienda1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      warning 6035: The relationship 'fk_envio_tienda_pedido_tienda1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="pedido_tienda">
+          <Key>
+            <PropertyRef Name="id_pedido_tienda" />
+            <PropertyRef Name="tienda_id_tienda" />
+          </Key>
+          <Property Name="id_pedido_tienda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" />
+          <Property Name="tienda_id_tienda" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_detalle_factura_producto1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      warning 6035: The relationship 'fk_detalle_order_de_compra_producto1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      warning 6035: The relationship 'fk_detalle_pedido_cliente_producto1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      warning 6035: The relationship 'fk_inventario_producto1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id_producto" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+          </Key>
+          <Property Name="id_producto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_producto" Type="varchar" MaxLength="45" />
+          <Property Name="detalle_producto" Type="varchar" MaxLength="45" />
+          <Property Name="proveedor_id_proveedor" Type="int" Nullable="false" />
+          <Property Name="precio" Type="varchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Name="id_proveedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_proveedor" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+          <Property Name="nit" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_rol" Type="varchar" MaxLength="45" />
+          <Property Name="descripcion" Type="varchar" MaxLength="45" />
+          <Property Name="estado" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="tienda">
+          <Key>
+            <PropertyRef Name="id_tienda" />
+          </Key>
+          <Property Name="id_tienda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'fk_control_acceso_usuario1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+            <PropertyRef Name="rol_id_rol" />
+            <PropertyRef Name="empleado_id_empleado" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_usuario" Type="varchar" MaxLength="45" />
+          <Property Name="password" Type="varchar" MaxLength="45" />
+          <Property Name="rol_id_rol" Type="int" Nullable="false" />
+          <Property Name="empleado_id_empleado" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_detalle_order_de_compra_order_de_compra1">
+          <End Role="order_de_compra" Type="agrosysModel.Store.order_de_compra" Multiplicity="1" />
+          <End Role="detalle_order_de_compra" Type="agrosysModel.Store.detalle_order_de_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_de_compra">
+              <PropertyRef Name="id_order_de_compra" />
+            </Principal>
+            <Dependent Role="detalle_order_de_compra">
+              <PropertyRef Name="order_de_compra_id_order_de_compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_order_de_compra_proveedor1">
+          <End Role="proveedor" Type="agrosysModel.Store.proveedor" Multiplicity="1" />
+          <End Role="detalle_order_de_compra" Type="agrosysModel.Store.detalle_order_de_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="detalle_order_de_compra">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_tienda1">
+          <End Role="tienda" Type="agrosysModel.Store.tienda" Multiplicity="1" />
+          <End Role="empleado" Type="agrosysModel.Store.empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="id_tienda" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="tienda_id_tienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_envio_cliente_cliente1">
+          <End Role="cliente" Type="agrosysModel.Store.cliente" Multiplicity="1" />
+          <End Role="envio_cliente" Type="agrosysModel.Store.envio_cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="envio_cliente">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factura_cliente">
+          <End Role="cliente" Type="agrosysModel.Store.cliente" Multiplicity="1" />
+          <End Role="factura" Type="agrosysModel.Store.factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factura_pedido_cliente1">
+          <End Role="pedido_cliente" Type="agrosysModel.Store.pedido_cliente" Multiplicity="1" />
+          <End Role="factura" Type="agrosysModel.Store.factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido_cliente">
+              <PropertyRef Name="id_pedido_cliente" />
+              <PropertyRef Name="cliente_id_cliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+              <PropertyRef Name="pedido_cliente_cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_inventario_proveedor1">
+          <End Role="proveedor" Type="agrosysModel.Store.proveedor" Multiplicity="1" />
+          <End Role="inventario" Type="agrosysModel.Store.inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="inventario">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pedido_cliente_cliente1">
+          <End Role="cliente" Type="agrosysModel.Store.cliente" Multiplicity="1" />
+          <End Role="pedido_cliente" Type="agrosysModel.Store.pedido_cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="pedido_cliente">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pedido_tienda_tienda1">
+          <End Role="tienda" Type="agrosysModel.Store.tienda" Multiplicity="1" />
+          <End Role="pedido_tienda" Type="agrosysModel.Store.pedido_tienda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="id_tienda" />
+            </Principal>
+            <Dependent Role="pedido_tienda">
+              <PropertyRef Name="tienda_id_tienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_producto_proveedor1">
+          <End Role="proveedor" Type="agrosysModel.Store.proveedor" Multiplicity="1" />
+          <End Role="producto" Type="agrosysModel.Store.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_rol1">
+          <End Role="rol" Type="agrosysModel.Store.rol" Multiplicity="1" />
+          <End Role="usuario" Type="agrosysModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="rol_id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="agrosysModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="agrosysEntitiesFull" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="clientes" EntityType="agrosysModel.cliente" />
+          <EntitySet Name="control_acceso" EntityType="agrosysModel.control_acceso" />
+          <EntitySet Name="detalle_factura" EntityType="agrosysModel.detalle_factura" />
+          <EntitySet Name="detalle_order_de_compra" EntityType="agrosysModel.detalle_order_de_compra" />
+          <EntitySet Name="detalle_pedido_cliente" EntityType="agrosysModel.detalle_pedido_cliente" />
+          <EntitySet Name="detalle_pedido_tienda" EntityType="agrosysModel.detalle_pedido_tienda" />
+          <EntitySet Name="empleadoes" EntityType="agrosysModel.empleado" />
+          <EntitySet Name="envio_cliente" EntityType="agrosysModel.envio_cliente" />
+          <EntitySet Name="envio_tienda" EntityType="agrosysModel.envio_tienda" />
+          <EntitySet Name="facturas" EntityType="agrosysModel.factura" />
+          <EntitySet Name="inventarios" EntityType="agrosysModel.inventario" />
+          <EntitySet Name="order_de_compra" EntityType="agrosysModel.order_de_compra" />
+          <EntitySet Name="pedido_cliente" EntityType="agrosysModel.pedido_cliente" />
+          <EntitySet Name="pedido_tienda" EntityType="agrosysModel.pedido_tienda" />
+          <EntitySet Name="productoes" EntityType="agrosysModel.producto" />
+          <EntitySet Name="proveedors" EntityType="agrosysModel.proveedor" />
+          <EntitySet Name="rols" EntityType="agrosysModel.rol" />
+          <EntitySet Name="tiendas" EntityType="agrosysModel.tienda" />
+          <EntitySet Name="usuarios" EntityType="agrosysModel.usuario" />
+          <AssociationSet Name="fk_envio_cliente_cliente1" Association="agrosysModel.fk_envio_cliente_cliente1">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="envio_cliente" EntitySet="envio_cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factura_cliente" Association="agrosysModel.fk_factura_cliente">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="factura" EntitySet="facturas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pedido_cliente_cliente1" Association="agrosysModel.fk_pedido_cliente_cliente1">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="pedido_cliente" EntitySet="pedido_cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_order_de_compra_order_de_compra1" Association="agrosysModel.fk_detalle_order_de_compra_order_de_compra1">
+            <End Role="order_de_compra" EntitySet="order_de_compra" />
+            <End Role="detalle_order_de_compra" EntitySet="detalle_order_de_compra" />
+          </AssociationSet>
+          <AssociationSet Name="fk_detalle_order_de_compra_proveedor1" Association="agrosysModel.fk_detalle_order_de_compra_proveedor1">
+            <End Role="proveedor" EntitySet="proveedors" />
+            <End Role="detalle_order_de_compra" EntitySet="detalle_order_de_compra" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_tienda1" Association="agrosysModel.fk_empleado_tienda1">
+            <End Role="tienda" EntitySet="tiendas" />
+            <End Role="empleado" EntitySet="empleadoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_factura_pedido_cliente1" Association="agrosysModel.fk_factura_pedido_cliente1">
+            <End Role="pedido_cliente" EntitySet="pedido_cliente" />
+            <End Role="factura" EntitySet="facturas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_inventario_proveedor1" Association="agrosysModel.fk_inventario_proveedor1">
+            <End Role="proveedor" EntitySet="proveedors" />
+            <End Role="inventario" EntitySet="inventarios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_pedido_tienda_tienda1" Association="agrosysModel.fk_pedido_tienda_tienda1">
+            <End Role="tienda" EntitySet="tiendas" />
+            <End Role="pedido_tienda" EntitySet="pedido_tienda" />
+          </AssociationSet>
+          <AssociationSet Name="fk_producto_proveedor1" Association="agrosysModel.fk_producto_proveedor1">
+            <End Role="proveedor" EntitySet="proveedors" />
+            <End Role="producto" EntitySet="productoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_rol1" Association="agrosysModel.fk_usuario_rol1">
+            <End Role="rol" EntitySet="rols" />
+            <End Role="usuario" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="primer_nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="segundo_nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="primer_apellido" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="segundo_apellido" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="nit" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="envio_cliente" Relationship="agrosysModel.fk_envio_cliente_cliente1" FromRole="cliente" ToRole="envio_cliente" />
+          <NavigationProperty Name="facturas" Relationship="agrosysModel.fk_factura_cliente" FromRole="cliente" ToRole="factura" />
+          <NavigationProperty Name="pedido_cliente" Relationship="agrosysModel.fk_pedido_cliente_cliente1" FromRole="cliente" ToRole="pedido_cliente" />
+          <Property Type="String" Name="dpi" MaxLength="75" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="control_acceso">
+          <Key>
+            <PropertyRef Name="id_control_acceso" />
+            <PropertyRef Name="usuario_id_usuario" />
+          </Key>
+          <Property Type="Int32" Name="id_control_acceso" Nullable="false" />
+          <Property Type="String" Name="hora" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fecha" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="usuario_id_usuario" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_factura">
+          <Key>
+            <PropertyRef Name="id_detalle_factura" />
+            <PropertyRef Name="factura_id_factura" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Type="Int32" Name="id_detalle_factura" Nullable="false" />
+          <Property Type="String" Name="sub_total" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Int32" Name="factura_id_factura" Nullable="false" />
+          <Property Type="Int32" Name="producto_id_producto" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_order_de_compra">
+          <Key>
+            <PropertyRef Name="id_detalle_order_de_compra" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+            <PropertyRef Name="order_de_compra_id_order_de_compra" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Type="Int32" Name="id_detalle_order_de_compra" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Int32" Name="proveedor_id_proveedor" Nullable="false" />
+          <Property Type="Int32" Name="order_de_compra_id_order_de_compra" Nullable="false" />
+          <Property Type="Int32" Name="producto_id_producto" Nullable="false" />
+          <Property Type="String" Name="precio" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="subtotal" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="order_de_compra" Relationship="agrosysModel.fk_detalle_order_de_compra_order_de_compra1" FromRole="detalle_order_de_compra" ToRole="order_de_compra" />
+          <NavigationProperty Name="proveedor" Relationship="agrosysModel.fk_detalle_order_de_compra_proveedor1" FromRole="detalle_order_de_compra" ToRole="proveedor" />
+        </EntityType>
+        <EntityType Name="detalle_pedido_cliente">
+          <Key>
+            <PropertyRef Name="id_detalle_pedido_cliente" />
+            <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Type="Int32" Name="id_detalle_pedido_cliente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Int32" Name="pedido_cliente_id_pedido_cliente" Nullable="false" />
+          <Property Type="Int32" Name="producto_id_producto" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalle_pedido_tienda">
+          <Key>
+            <PropertyRef Name="id_detalle_pedido_tienda" />
+            <PropertyRef Name="pedido_tienda_id_pedido_tienda" />
+          </Key>
+          <Property Type="Int32" Name="id_detalle_pedido_tienda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Int32" Name="pedido_tienda_id_pedido_tienda" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="id_empleado" />
+            <PropertyRef Name="tienda_id_tienda" />
+          </Key>
+          <Property Type="Int32" Name="id_empleado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="primer_nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="segundo_nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="primer_apellido" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="segundo_apellido" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="tienda_id_tienda" Nullable="false" />
+          <NavigationProperty Name="tienda" Relationship="agrosysModel.fk_empleado_tienda1" FromRole="empleado" ToRole="tienda" />
+          <Property Type="String" Name="dpi" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nit" MaxLength="75" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="envio_cliente">
+          <Key>
+            <PropertyRef Name="id_envio_cliente" />
+            <PropertyRef Name="cliente_id_cliente" />
+          </Key>
+          <Property Type="Int32" Name="id_envio_cliente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Time" Name="hora" />
+          <Property Type="Int32" Name="cliente_id_cliente" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="agrosysModel.fk_envio_cliente_cliente1" FromRole="envio_cliente" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="envio_tienda">
+          <Key>
+            <PropertyRef Name="id_envio_tienda" />
+            <PropertyRef Name="pedido_tienda_id_pedido_tienda" />
+          </Key>
+          <Property Type="Int32" Name="id_envio_tienda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Time" Name="hora" />
+          <Property Type="Int32" Name="pedido_tienda_id_pedido_tienda" Nullable="false" />
+        </EntityType>
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="id_factura" />
+            <PropertyRef Name="cliente_id_cliente" />
+            <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+            <PropertyRef Name="pedido_cliente_cliente_id_cliente" />
+          </Key>
+          <Property Type="Int32" Name="id_factura" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="sub_total" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="total" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="iva" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cliente_id_cliente" Nullable="false" />
+          <Property Type="Int32" Name="pedido_cliente_id_pedido_cliente" Nullable="false" />
+          <Property Type="Int32" Name="pedido_cliente_cliente_id_cliente" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="agrosysModel.fk_factura_cliente" FromRole="factura" ToRole="cliente" />
+          <NavigationProperty Name="pedido_cliente" Relationship="agrosysModel.fk_factura_pedido_cliente1" FromRole="factura" ToRole="pedido_cliente" />
+        </EntityType>
+        <EntityType Name="inventario">
+          <Key>
+            <PropertyRef Name="id_inventario" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+            <PropertyRef Name="producto_id_producto" />
+          </Key>
+          <Property Type="Int32" Name="id_inventario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="total_productos" />
+          <Property Type="Int32" Name="proveedor_id_proveedor" Nullable="false" />
+          <Property Type="Int32" Name="producto_id_producto" Nullable="false" />
+          <NavigationProperty Name="proveedor" Relationship="agrosysModel.fk_inventario_proveedor1" FromRole="inventario" ToRole="proveedor" />
+        </EntityType>
+        <EntityType Name="order_de_compra">
+          <Key>
+            <PropertyRef Name="id_order_de_compra" />
+          </Key>
+          <Property Type="Int32" Name="id_order_de_compra" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Time" Name="hora" />
+          <Property Type="String" Name="iva" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="total" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="detalle_order_de_compra" Relationship="agrosysModel.fk_detalle_order_de_compra_order_de_compra1" FromRole="order_de_compra" ToRole="detalle_order_de_compra" />
+        </EntityType>
+        <EntityType Name="pedido_cliente">
+          <Key>
+            <PropertyRef Name="id_pedido_cliente" />
+            <PropertyRef Name="cliente_id_cliente" />
+          </Key>
+          <Property Type="Int32" Name="id_pedido_cliente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Time" Name="hora" />
+          <Property Type="Int32" Name="cliente_id_cliente" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="agrosysModel.fk_pedido_cliente_cliente1" FromRole="pedido_cliente" ToRole="cliente" />
+          <NavigationProperty Name="facturas" Relationship="agrosysModel.fk_factura_pedido_cliente1" FromRole="pedido_cliente" ToRole="factura" />
+        </EntityType>
+        <EntityType Name="pedido_tienda">
+          <Key>
+            <PropertyRef Name="id_pedido_tienda" />
+            <PropertyRef Name="tienda_id_tienda" />
+          </Key>
+          <Property Type="Int32" Name="id_pedido_tienda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Time" Name="hora" />
+          <Property Type="Int32" Name="tienda_id_tienda" Nullable="false" />
+          <NavigationProperty Name="tienda" Relationship="agrosysModel.fk_pedido_tienda_tienda1" FromRole="pedido_tienda" ToRole="tienda" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id_producto" />
+            <PropertyRef Name="proveedor_id_proveedor" />
+          </Key>
+          <Property Type="Int32" Name="id_producto" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre_producto" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="detalle_producto" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="proveedor_id_proveedor" Nullable="false" />
+          <Property Type="String" Name="precio" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="proveedor" Relationship="agrosysModel.fk_producto_proveedor1" FromRole="producto" ToRole="proveedor" />
+        </EntityType>
+        <EntityType Name="proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Type="Int32" Name="id_proveedor" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre_proveedor" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nit" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="detalle_order_de_compra" Relationship="agrosysModel.fk_detalle_order_de_compra_proveedor1" FromRole="proveedor" ToRole="detalle_order_de_compra" />
+          <NavigationProperty Name="inventarios" Relationship="agrosysModel.fk_inventario_proveedor1" FromRole="proveedor" ToRole="inventario" />
+          <NavigationProperty Name="productoes" Relationship="agrosysModel.fk_producto_proveedor1" FromRole="proveedor" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Type="Int32" Name="id_rol" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre_rol" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descripcion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="estado" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="usuarios" Relationship="agrosysModel.fk_usuario_rol1" FromRole="rol" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="tienda">
+          <Key>
+            <PropertyRef Name="id_tienda" />
+          </Key>
+          <Property Type="Int32" Name="id_tienda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="empleadoes" Relationship="agrosysModel.fk_empleado_tienda1" FromRole="tienda" ToRole="empleado" />
+          <NavigationProperty Name="pedido_tienda" Relationship="agrosysModel.fk_pedido_tienda_tienda1" FromRole="tienda" ToRole="pedido_tienda" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+            <PropertyRef Name="rol_id_rol" />
+            <PropertyRef Name="empleado_id_empleado" />
+          </Key>
+          <Property Type="Int32" Name="id_usuario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre_usuario" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="rol_id_rol" Nullable="false" />
+          <Property Type="Int32" Name="empleado_id_empleado" Nullable="false" />
+          <NavigationProperty Name="rol" Relationship="agrosysModel.fk_usuario_rol1" FromRole="usuario" ToRole="rol" />
+        </EntityType>
+        <Association Name="fk_envio_cliente_cliente1">
+          <End Type="agrosysModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="agrosysModel.envio_cliente" Role="envio_cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="envio_cliente">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factura_cliente">
+          <End Type="agrosysModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="agrosysModel.factura" Role="factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pedido_cliente_cliente1">
+          <End Type="agrosysModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="agrosysModel.pedido_cliente" Role="pedido_cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="pedido_cliente">
+              <PropertyRef Name="cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_order_de_compra_order_de_compra1">
+          <End Type="agrosysModel.order_de_compra" Role="order_de_compra" Multiplicity="1" />
+          <End Type="agrosysModel.detalle_order_de_compra" Role="detalle_order_de_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_de_compra">
+              <PropertyRef Name="id_order_de_compra" />
+            </Principal>
+            <Dependent Role="detalle_order_de_compra">
+              <PropertyRef Name="order_de_compra_id_order_de_compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_detalle_order_de_compra_proveedor1">
+          <End Type="agrosysModel.proveedor" Role="proveedor" Multiplicity="1" />
+          <End Type="agrosysModel.detalle_order_de_compra" Role="detalle_order_de_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="detalle_order_de_compra">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_tienda1">
+          <End Type="agrosysModel.tienda" Role="tienda" Multiplicity="1" />
+          <End Type="agrosysModel.empleado" Role="empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="id_tienda" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="tienda_id_tienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_factura_pedido_cliente1">
+          <End Type="agrosysModel.pedido_cliente" Role="pedido_cliente" Multiplicity="1" />
+          <End Type="agrosysModel.factura" Role="factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido_cliente">
+              <PropertyRef Name="id_pedido_cliente" />
+              <PropertyRef Name="cliente_id_cliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="pedido_cliente_id_pedido_cliente" />
+              <PropertyRef Name="pedido_cliente_cliente_id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_inventario_proveedor1">
+          <End Type="agrosysModel.proveedor" Role="proveedor" Multiplicity="1" />
+          <End Type="agrosysModel.inventario" Role="inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="inventario">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_pedido_tienda_tienda1">
+          <End Type="agrosysModel.tienda" Role="tienda" Multiplicity="1" />
+          <End Type="agrosysModel.pedido_tienda" Role="pedido_tienda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="id_tienda" />
+            </Principal>
+            <Dependent Role="pedido_tienda">
+              <PropertyRef Name="tienda_id_tienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_producto_proveedor1">
+          <End Type="agrosysModel.proveedor" Role="proveedor" Multiplicity="1" />
+          <End Type="agrosysModel.producto" Role="producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="proveedor_id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_rol1">
+          <End Type="agrosysModel.rol" Role="rol" Multiplicity="1" />
+          <End Type="agrosysModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="rol_id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="agrosysModelStoreContainer" CdmEntityContainer="agrosysEntitiesFull">
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="agrosysModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="dpi" ColumnName="dpi" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+                <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+                <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+                <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="control_acceso">
+            <EntityTypeMapping TypeName="agrosysModel.control_acceso">
+              <MappingFragment StoreEntitySet="control_acceso">
+                <ScalarProperty Name="usuario_id_usuario" ColumnName="usuario_id_usuario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="id_control_acceso" ColumnName="id_control_acceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_factura">
+            <EntityTypeMapping TypeName="agrosysModel.detalle_factura">
+              <MappingFragment StoreEntitySet="detalle_factura">
+                <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+                <ScalarProperty Name="factura_id_factura" ColumnName="factura_id_factura" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+                <ScalarProperty Name="id_detalle_factura" ColumnName="id_detalle_factura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_order_de_compra">
+            <EntityTypeMapping TypeName="agrosysModel.detalle_order_de_compra">
+              <MappingFragment StoreEntitySet="detalle_order_de_compra">
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+                <ScalarProperty Name="order_de_compra_id_order_de_compra" ColumnName="order_de_compra_id_order_de_compra" />
+                <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_detalle_order_de_compra" ColumnName="id_detalle_order_de_compra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_pedido_cliente">
+            <EntityTypeMapping TypeName="agrosysModel.detalle_pedido_cliente">
+              <MappingFragment StoreEntitySet="detalle_pedido_cliente">
+                <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+                <ScalarProperty Name="pedido_cliente_id_pedido_cliente" ColumnName="pedido_cliente_id_pedido_cliente" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_detalle_pedido_cliente" ColumnName="id_detalle_pedido_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_pedido_tienda">
+            <EntityTypeMapping TypeName="agrosysModel.detalle_pedido_tienda">
+              <MappingFragment StoreEntitySet="detalle_pedido_tienda">
+                <ScalarProperty Name="pedido_tienda_id_pedido_tienda" ColumnName="pedido_tienda_id_pedido_tienda" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_detalle_pedido_tienda" ColumnName="id_detalle_pedido_tienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleadoes">
+            <EntityTypeMapping TypeName="agrosysModel.empleado">
+              <MappingFragment StoreEntitySet="empleado">
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="dpi" ColumnName="dpi" />
+                <ScalarProperty Name="tienda_id_tienda" ColumnName="tienda_id_tienda" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+                <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+                <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+                <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="envio_cliente">
+            <EntityTypeMapping TypeName="agrosysModel.envio_cliente">
+              <MappingFragment StoreEntitySet="envio_cliente">
+                <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_envio_cliente" ColumnName="id_envio_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="envio_tienda">
+            <EntityTypeMapping TypeName="agrosysModel.envio_tienda">
+              <MappingFragment StoreEntitySet="envio_tienda">
+                <ScalarProperty Name="pedido_tienda_id_pedido_tienda" ColumnName="pedido_tienda_id_pedido_tienda" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_envio_tienda" ColumnName="id_envio_tienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facturas">
+            <EntityTypeMapping TypeName="agrosysModel.factura">
+              <MappingFragment StoreEntitySet="factura">
+                <ScalarProperty Name="pedido_cliente_cliente_id_cliente" ColumnName="pedido_cliente_cliente_id_cliente" />
+                <ScalarProperty Name="pedido_cliente_id_pedido_cliente" ColumnName="pedido_cliente_id_pedido_cliente" />
+                <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventarios">
+            <EntityTypeMapping TypeName="agrosysModel.inventario">
+              <MappingFragment StoreEntitySet="inventario">
+                <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+                <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+                <ScalarProperty Name="total_productos" ColumnName="total_productos" />
+                <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order_de_compra">
+            <EntityTypeMapping TypeName="agrosysModel.order_de_compra">
+              <MappingFragment StoreEntitySet="order_de_compra">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_order_de_compra" ColumnName="id_order_de_compra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedido_cliente">
+            <EntityTypeMapping TypeName="agrosysModel.pedido_cliente">
+              <MappingFragment StoreEntitySet="pedido_cliente">
+                <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_pedido_cliente" ColumnName="id_pedido_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedido_tienda">
+            <EntityTypeMapping TypeName="agrosysModel.pedido_tienda">
+              <MappingFragment StoreEntitySet="pedido_tienda">
+                <ScalarProperty Name="tienda_id_tienda" ColumnName="tienda_id_tienda" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_pedido_tienda" ColumnName="id_pedido_tienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productoes">
+            <EntityTypeMapping TypeName="agrosysModel.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+                <ScalarProperty Name="detalle_producto" ColumnName="detalle_producto" />
+                <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proveedors">
+            <EntityTypeMapping TypeName="agrosysModel.proveedor">
+              <MappingFragment StoreEntitySet="proveedor">
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre_proveedor" ColumnName="nombre_proveedor" />
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rols">
+            <EntityTypeMapping TypeName="agrosysModel.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre_rol" ColumnName="nombre_rol" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiendas">
+            <EntityTypeMapping TypeName="agrosysModel.tienda">
+              <MappingFragment StoreEntitySet="tienda">
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_tienda" ColumnName="id_tienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="agrosysModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="empleado_id_empleado" ColumnName="empleado_id_empleado" />
+                <ScalarProperty Name="rol_id_rol" ColumnName="rol_id_rol" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

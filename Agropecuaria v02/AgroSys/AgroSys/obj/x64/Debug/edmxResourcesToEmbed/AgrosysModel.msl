@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="agrosysModelStoreContainer" CdmEntityContainer="agrosysEntitiesModel">
+    <EntitySetMapping Name="tienda">
+      <EntityTypeMapping TypeName="agrosysModel.tienda">
+        <MappingFragment StoreEntitySet="tienda">
+          <ScalarProperty Name="id_tienda" ColumnName="id_tienda" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="agrosysModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_rol" ColumnName="nombre_rol" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="agrosysModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="empleado_id_empleado" ColumnName="empleado_id_empleado" />
+          <ScalarProperty Name="rol_id_rol" ColumnName="rol_id_rol" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="agrosysModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="control_acceso">
+      <EntityTypeMapping TypeName="agrosysModel.control_acceso">
+        <MappingFragment StoreEntitySet="control_acceso">
+          <ScalarProperty Name="usuario_id_usuario" ColumnName="usuario_id_usuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="id_control_acceso" ColumnName="id_control_acceso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_factura">
+      <EntityTypeMapping TypeName="agrosysModel.detalle_factura">
+        <MappingFragment StoreEntitySet="detalle_factura">
+          <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+          <ScalarProperty Name="factura_id_factura" ColumnName="factura_id_factura" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+          <ScalarProperty Name="id_detalle_factura" ColumnName="id_detalle_factura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_order_de_compra">
+      <EntityTypeMapping TypeName="agrosysModel.detalle_order_de_compra">
+        <MappingFragment StoreEntitySet="detalle_order_de_compra">
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+          <ScalarProperty Name="order_de_compra_id_order_de_compra" ColumnName="order_de_compra_id_order_de_compra" />
+          <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_detalle_order_de_compra" ColumnName="id_detalle_order_de_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_pedido_cliente">
+      <EntityTypeMapping TypeName="agrosysModel.detalle_pedido_cliente">
+        <MappingFragment StoreEntitySet="detalle_pedido_cliente">
+          <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+          <ScalarProperty Name="pedido_cliente_id_pedido_cliente" ColumnName="pedido_cliente_id_pedido_cliente" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_detalle_pedido_cliente" ColumnName="id_detalle_pedido_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_pedido_tienda">
+      <EntityTypeMapping TypeName="agrosysModel.detalle_pedido_tienda">
+        <MappingFragment StoreEntitySet="detalle_pedido_tienda">
+          <ScalarProperty Name="pedido_tienda_id_pedido_tienda" ColumnName="pedido_tienda_id_pedido_tienda" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_detalle_pedido_tienda" ColumnName="id_detalle_pedido_tienda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="agrosysModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="tienda_id_tienda" ColumnName="tienda_id_tienda" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="envio_cliente">
+      <EntityTypeMapping TypeName="agrosysModel.envio_cliente">
+        <MappingFragment StoreEntitySet="envio_cliente">
+          <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_envio_cliente" ColumnName="id_envio_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="envio_tienda">
+      <EntityTypeMapping TypeName="agrosysModel.envio_tienda">
+        <MappingFragment StoreEntitySet="envio_tienda">
+          <ScalarProperty Name="pedido_tienda_id_pedido_tienda" ColumnName="pedido_tienda_id_pedido_tienda" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_envio_tienda" ColumnName="id_envio_tienda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="agrosysModel.factura">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="pedido_cliente_cliente_id_cliente" ColumnName="pedido_cliente_cliente_id_cliente" />
+          <ScalarProperty Name="pedido_cliente_id_pedido_cliente" ColumnName="pedido_cliente_id_pedido_cliente" />
+          <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+          <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario">
+      <EntityTypeMapping TypeName="agrosysModel.inventario">
+        <MappingFragment StoreEntitySet="inventario">
+          <ScalarProperty Name="producto_id_producto" ColumnName="producto_id_producto" />
+          <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+          <ScalarProperty Name="total_productos" ColumnName="total_productos" />
+          <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_de_compra">
+      <EntityTypeMapping TypeName="agrosysModel.order_de_compra">
+        <MappingFragment StoreEntitySet="order_de_compra">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_order_de_compra" ColumnName="id_order_de_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedido_cliente">
+      <EntityTypeMapping TypeName="agrosysModel.pedido_cliente">
+        <MappingFragment StoreEntitySet="pedido_cliente">
+          <ScalarProperty Name="cliente_id_cliente" ColumnName="cliente_id_cliente" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_pedido_cliente" ColumnName="id_pedido_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedido_tienda">
+      <EntityTypeMapping TypeName="agrosysModel.pedido_tienda">
+        <MappingFragment StoreEntitySet="pedido_tienda">
+          <ScalarProperty Name="tienda_id_tienda" ColumnName="tienda_id_tienda" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_pedido_tienda" ColumnName="id_pedido_tienda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="agrosysModel.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="proveedor_id_proveedor" ColumnName="proveedor_id_proveedor" />
+          <ScalarProperty Name="detalle_producto" ColumnName="detalle_producto" />
+          <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedor">
+      <EntityTypeMapping TypeName="agrosysModel.proveedor">
+        <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="nombre_proveedor" ColumnName="nombre_proveedor" />
+          <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
