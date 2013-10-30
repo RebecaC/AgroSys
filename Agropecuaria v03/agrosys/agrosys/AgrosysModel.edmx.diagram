@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a7cc374fc004752ae5ee8cdeb063038" Name="Diagrama1">
+        <EntityTypeShape EntityType="agrosysModel.cliente" Width="1.5" PointX="5.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.control_acceso" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_factura" Width="1.5" PointX="2.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_order_de_compra" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_pedido_cliente" Width="1.5" PointX="12.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.detalle_pedido_tienda" Width="1.5" PointX="4.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.empleado" Width="1.5" PointX="13" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.envio_cliente" Width="1.5" PointX="8" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.envio_tienda" Width="1.5" PointX="6.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.factura" Width="1.5" PointX="10.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.inventario" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.order_de_compra" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.pedido_cliente" Width="1.5" PointX="8" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.pedido_tienda" Width="1.5" PointX="13" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.producto" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.proveedor" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.rol" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.tienda" Width="1.5" PointX="10.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agrosysModel.usuario" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="agrosysModel.fk_envio_cliente_cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_factura_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_pedido_cliente_cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_detalle_order_de_compra_order_de_compra1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_detalle_order_de_compra_proveedor1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_empleado_tienda1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_factura_pedido_cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_inventario_proveedor1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_pedido_tienda_tienda1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_producto_proveedor1" ManuallyRouted="false" />
+        <AssociationConnector Association="agrosysModel.fk_usuario_rol1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
